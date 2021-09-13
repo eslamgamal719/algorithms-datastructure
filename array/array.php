@@ -19,21 +19,25 @@ class ArrayList
         $this->array = array_fill(0, $this->maxSize, null);
     }
 
+    //check if array is empty
     public function isEmpty()
     {
         return $this->length == 0;
     }
 
+    //check if array is full
     public function isFull()
     {
         return $this->length == $this->maxSize;
     }
-
+    
+    //get array size
     public function getSize()
     {
         return $this->length;
     }
 
+    //print array elements
     public function printArray()
     {
         for($i = 0; $i < $this->length; $i++) {
@@ -41,6 +45,7 @@ class ArrayList
         }
     }
 
+    //insert value at specific position
     public function insertAtPosition(int $position, $element) 
     {
         if($this->isFull()) {
@@ -56,6 +61,7 @@ class ArrayList
         }
     }
 
+    //insert value at array end
     public function insertAtEnd($element) 
     {
         if($this->isFull()) {
@@ -66,6 +72,7 @@ class ArrayList
         }    
     }
 
+    //search value in array
     public function search($element) 
     {
         for($i = 0; $i < $this->length; $i++) {
@@ -76,6 +83,7 @@ class ArrayList
         return -1;
     }
 
+    //check if value not found insert it
     public function insertNoDuplicate($element) 
     {
         if($this->search($element) == -1) {
@@ -85,6 +93,7 @@ class ArrayList
         }
     }
 
+    //update element with specific position
     public function updateAt(int $position, $newValue)
     {
         if($position < 0 || $position >= $this->length) {
@@ -94,6 +103,7 @@ class ArrayList
         }
     }
 
+    //get specific element
     public function getElement(int $position)
     {        
         if($position < 0 || $position >= $this->length) {
@@ -103,6 +113,7 @@ class ArrayList
         }
     }
 
+    //remove element with specific position
     public function removeAtPosition(int $position) {
         if($this->isEmpty()) {
             echo "Array is empty...!";
@@ -117,6 +128,7 @@ class ArrayList
         }
     }
 
+    //clear array
     public function clear()
     {
         $this->length = 0;
